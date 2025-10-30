@@ -9,5 +9,6 @@ namespace SignalR.BussinesLayer.Abstract
 {
     public interface IProductService : IGenericService<Product>
     {
+        List<Product> TGetProductWithCategories();
     }
 }

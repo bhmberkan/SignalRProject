@@ -38,6 +38,11 @@ namespace SignalR.BussinesLayer.Concrete
             return _productDal.GetListAll();
         }
 
+        public List<Product> TGetProductWithCategories()
+        {
+            return _productDal.GetProductWithCategories();
+        }
+
         public void TUpdate(Product entity)
         {
             _productDal.Update(entity);

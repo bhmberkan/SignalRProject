@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using SignalR.BussinesLayer.Abstract;
 using SignalR.DtoLayer.SocialMedia;
-using SignalR.DtoLayer.SocialMediaDto;
 using SignalR.EntityLayer.Entities;
 
 namespace SignalRApi.Controllers

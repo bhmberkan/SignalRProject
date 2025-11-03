@@ -29,15 +29,14 @@ namespace SignalRApi.Controllers
         {
             About about = new About()
             {
-                Title=createAboutDto.Title,
-                Description=createAboutDto.Description,
-                ImageUrl=createAboutDto.ImageUrl
+                Title = createAboutDto.Title,
+                Description = createAboutDto.Description,
+                ImageUrl = createAboutDto.ImageUrl
             }; // yöntem 1  // sağlıklı değil. dtoların amacı ne o zaman ? 
             _aboutService.TAdd(about);
             return Ok("Hakkimda kısmı başarılı bir şekilde eklendi.");
         }
-
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteAbout(int id)
         {
             var value = _aboutService.TGetById(id);
@@ -50,17 +49,17 @@ namespace SignalRApi.Controllers
             About about = new About()
             {
                 AboutID = updateAboutDto.AboutID,
-                Title=updateAboutDto.Title,
-                Description =updateAboutDto.Description,
-                ImageUrl=updateAboutDto.ImageUrl
+                Title = updateAboutDto.Title,
+                Description = updateAboutDto.Description,
+                ImageUrl = updateAboutDto.ImageUrl
             };
             _aboutService.TUpdate(about);
             return Ok("Hakkımda Alanı Güncellendi");
         }
-        [HttpGet("GetAbout")]
+        [HttpGet("{id}")]
         public IActionResult GetAbout(int id)
         {
-           var value = _aboutService.TGetById(id);
+            var value = _aboutService.TGetById(id);
             return Ok(value);
         }
     }

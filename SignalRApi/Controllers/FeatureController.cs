@@ -40,14 +40,14 @@ namespace SignalRApi.Controllers
             });
             return Ok("Özellik Eklendi");
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteFeature(int id)
         {
             var values = _FeatureService.TGetById(id);
             _FeatureService.TDelete(values);
             return Ok(values);
         }
-        [HttpGet("GetFeature")]
+        [HttpGet("{id}")]
         public IActionResult GetFeature(int id)
         {
             var value = _FeatureService.TGetById(id);

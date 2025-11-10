@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace SignalR.BussinesLayer.Abstract
 {
-    public interface ICategoryService : IGenericService<Category>
+    public interface IMoneyCaseService : IGenericService<MoneyCase>
     {
-         int TCategoryCount();
-        int TActiveCategoryCount();
-        int TPassiveCategoryCount();
+        decimal TTotalMoneyCaseAmount();
     }
 }

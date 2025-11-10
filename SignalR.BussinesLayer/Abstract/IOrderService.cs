@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace SignalR.BussinesLayer.Abstract
 {
-    public interface ICategoryService : IGenericService<Category>
+    public interface IOrderService : IGenericService<Order>
     {
-         int TCategoryCount();
-        int TActiveCategoryCount();
-        int TPassiveCategoryCount();
+        int TTotalOrderCount();
+        int TActiveOrderCount();
+        decimal TLastOrderPrice();
+        decimal TTodayTotalPrice();
     }
 }

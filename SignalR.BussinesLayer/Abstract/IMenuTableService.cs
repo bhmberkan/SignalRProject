@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace SignalR.BussinesLayer.Abstract
 {
-    public interface ICategoryService : IGenericService<Category>
+    public interface IMenuTableService : IGenericService<MenuTable>
     {
-         int TCategoryCount();
-        int TActiveCategoryCount();
-        int TPassiveCategoryCount();
+        int TMenuTableCount();
     }
 }

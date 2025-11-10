@@ -40,7 +40,7 @@ namespace SignalRApi.Controllers
             {
                 CategoryID = createProductDto.CategoryID,
                 ProductName = createProductDto.ProductName,
-                Description= createProductDto.Description,
+                Description = createProductDto.Description,
                 Price = createProductDto.Price,
                 ImageUrl = createProductDto.ImageUrl,
                 ProductStatus = createProductDto.ProductStatus
@@ -61,19 +61,73 @@ namespace SignalRApi.Controllers
             var value = _ProductService.TGetById(id);
             return Ok(value);
         }
+
+        [HttpGet("ProductCount")]
+        public IActionResult ProductCount()
+        {
+
+            return Ok(_ProductService.TProductCount());
+        }
+
+
+        [HttpGet("ProductCountByHamburger")]
+        public IActionResult ProductProductCountByHamburgerCount()
+        {
+
+            return Ok(_ProductService.TProductCountByCategoryNameHamburger());
+        }
+
+
+        [HttpGet("PrdocutAvgPriceByHamburger")]
+        public IActionResult PrdocutAvgPriceByHamburger()
+        {
+
+            return Ok(_ProductService.TProductAvgPriceByHamburger());
+        }
+
+        [HttpGet("ProductCountByDrink")]
+        public IActionResult ProductCountByDrink()
+        {
+
+            return Ok(_ProductService.TProductCountByCategoryNameDrink());
+        }
+
+        [HttpGet("ProductPriceAvg")]
+        public IActionResult ProductPriceAvg()
+        {
+
+            return Ok(_ProductService.TProductPriceAvg());
+        }
+        
+        [HttpGet("ProductNameByMaxPrice")]
+        public IActionResult ProductNameByMaxPrice()
+        {
+
+            return Ok(_ProductService.TProductNameByMaxPrice());
+        } 
+        
+        [HttpGet("ProductNameByMinPrice")]
+        public IActionResult ProductNameByMinPrice()
+        {
+
+            return Ok(_ProductService.TProductNameByMinPrice());
+        }
+
+
+
         [HttpPut]
         public IActionResult UpdateProduct(UpdateProductDto updateProductDto)
         {
             _ProductService.TUpdate(new Product()
             {
-                CategoryID= updateProductDto.CategoryID,
+                CategoryID = updateProductDto.CategoryID,
                 ProductID = updateProductDto.ProductID,
                 ProductName = updateProductDto.ProductName,
                 Description = updateProductDto.Description,
                 Price = updateProductDto.Price,
                 ImageUrl = updateProductDto.ImageUrl,
                 ProductStatus = updateProductDto.ProductStatus
-                
+
             });
             return Ok("Ürün güncelendi");
         }

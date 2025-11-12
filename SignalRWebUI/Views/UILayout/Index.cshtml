@@ -6,8 +6,9 @@
 <!DOCTYPE html>
 <html>
 
-@await Component.InvokeAsync("_UILayoutHeadComponentPartial")
-
+<head>
+    @await Component.InvokeAsync("_UILayoutHeadComponentPartial")
+</head>
 <body>
     @await Component.InvokeAsync("_UILayoutNavbarComponentPartial")
 

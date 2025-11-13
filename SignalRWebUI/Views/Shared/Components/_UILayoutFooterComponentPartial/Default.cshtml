@@ -1,4 +1,6 @@
-﻿<footer class="footer_section">
+﻿@model List<ResultContactDto>
+@foreach(var item in Model){
+<footer class="footer_section">
     <div class="container">
         <div class="row">
             <div class="col-md-4 footer-col">
@@ -7,7 +9,7 @@
                         Bize Ulaşın
                     </h4>
                     <div class="contact_link_box">
-                        <a href="Location">
+                        <a href="@item.Location">
                             <i class="fa fa-map-marker" aria-hidden="true"></i>
                             <span>
                                 Lokasyon
@@ -16,13 +18,13 @@
                         <a href="">
                             <i class="fa fa-phone" aria-hidden="true"></i>
                             <span>
-                                Phone
+                                @item.Phone
                             </span>
                         </a>
                         <a href="">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                             <span>
-                                Mail
+                                @item.Mail
                             </span>
                         </a>
                     </div>
@@ -31,23 +33,23 @@
             <div class="col-md-4 footer-col">
                 <div class="footer_detail">
                     <a href="/Default/Index/" class="footer-logo">
-                        FooterTitle
+                        @item.FooterTitle
                     </a>
                     <p>
-                        FooterDescription
+                        @item.FooterDescription
                     </p>
                         @await Component.InvokeAsync("_UILayoutSocialMediaComponentPartial")
                 </div>
             </div>
             <div class="col-md-4 footer-col">
                 <h4>
-                   OpenDays
+                    @item.OpenDays
                 </h4>
                 <p>
-                   OpenDaysDescription
+                    @item.OpenDaysDescription
                 </p>
                 <p>
-                   OpenHours
+                    @item.OpenHours
                 </p>
             </div>
         </div>
@@ -61,3 +63,4 @@
         </div>
     </div>
 </footer>
+}
